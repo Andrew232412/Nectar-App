@@ -72,3 +72,18 @@ yarn-error.log
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+# Watchman
+.watchmanconfig
+
+# Prettier
+.prettierrc.js
+
+# ESLint
+.eslintrc.js
+
+# VS Code
+.vscode/
+
+# Bundler
+.bundle/
