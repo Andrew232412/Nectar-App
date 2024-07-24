@@ -1,51 +1,51 @@
 import React from 'react';
-import {View, Text, Image, StyleSheet, TouchableOpacity} from 'react-native';
-import productImage from '../assets/product.png';
+import {View, Button, StyleSheet, Image} from 'react-native';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
 
-const LoginScreen = ({navigation}: any) => {
+type RootStackParamList = {
+  Welcome: undefined;
+  Sign: undefined;
+  Login: undefined;
+};
+
+type Props = NativeStackScreenProps<RootStackParamList, 'Login'>;
+
+const LoginScreen: React.FC<Props> = ({navigation}) => {
   return (
     <View style={styles.container}>
-      <Image source={productImage} style={styles.image} />
+      <Image source={require('../assets/products.png')} style={styles.image} />
       <View style={styles.buttonContainer}>
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => navigation.navigate('Log In')}>
-          <Text style={styles.buttonText}>Log In</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => navigation.navigate('Sign Up')}>
-          <Text style={styles.buttonText}>Sign Up</Text>
-        </TouchableOpacity>
+        <Button
+          title="Log In"
+          onPress={() => navigation.navigate('Sign')}
+          color="green"
+        />
+        <Button
+          title="Sign Up"
+          onPress={() => navigation.navigate('Sign')}
+          color="green"
+        />
       </View>
     </View>
   );
 };
 
+export default LoginScreen;
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   image: {
-    flex: 1,
     width: '100%',
+    height: '50%',
     resizeMode: 'cover',
   },
   buttonContainer: {
-    padding: 20,
-  },
-  button: {
-    backgroundColor: '#53B175',
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-    borderRadius: 5,
-    marginBottom: 10,
-  },
-  buttonText: {
-    color: 'white',
-    fontSize: 18,
-    textAlign: 'center',
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
-
-export default LoginScreen;
