@@ -30,7 +30,7 @@
 }
 
 - (void)customizeRootView:(RCTRootView *)rootView {
-  [RNBootSplash initWithStoryboard:@"BootSplash" rootView:rootView]; 
+  [RNBootSplash initWithStoryboard:@"BootSplash" rootView:rootView];
 }
 
 @end
