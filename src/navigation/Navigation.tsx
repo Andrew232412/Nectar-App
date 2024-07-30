@@ -13,7 +13,9 @@ export default function Navigation() {
   const ref = useNavigate();
   return (
     <NavigationContainer ref={ref}>
-      <Stack.Navigator initialRouteName="Welcome" screenOptions={{headerShown: false}}>
+      <Stack.Navigator
+        initialRouteName="Welcome"
+        screenOptions={{headerShown: false}}>
         <Stack.Screen name="Welcome" component={WelcomeScreen} />
         <Stack.Screen name="Sign" component={SignScreen} />
         <Stack.Screen name="LogIn" component={LoginScreen} />

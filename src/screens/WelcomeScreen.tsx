@@ -17,7 +17,7 @@ function WelcomeScreen() {
       <View style={styles.overlay}>
         <View style={styles.contentContainer}>
           <Group />
-          <Text style={styles.welcomeText}>Welcome to our store</Text>
+          <Text style={styles.title}>Welcome to our store</Text>
           <Text style={styles.subtitle}>
             Get your groceries in as fast as one hour
           </Text>
@@ -49,11 +49,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginBottom: 50,
   },
-  welcomeText: {
-    fontSize: 26,
+  title: {
+    fontFamily: 'Gilroy-Bold',
+    fontWeight: 300,
+    fontSize: 48,
     color: 'white',
     marginBottom: 17,
     padding: 15,
+    justifyContent: 'center',
   },
   subtitle: {
     fontSize: 18,
@@ -64,11 +67,15 @@ const styles = StyleSheet.create({
     backgroundColor: '#53B175',
     paddingVertical: 10,
     paddingHorizontal: 20,
-    borderRadius: 5,
+    borderRadius: 15,
+    width: 353,
+    height: 60,
+    justifyContent: 'center',
   },
   buttonText: {
     color: 'white',
     fontSize: 18,
+    textAlign: 'center',
   },
 });
 
