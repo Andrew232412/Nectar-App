@@ -29,13 +29,13 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'white',
-    alignItems: 'flex-start',
-    justifyContent: 'flex-start',
   },
   image: {
     width: '100%',
     height: '41.7%',
     resizeMode: 'cover',
+    alignItems: 'flex-start',
+    justifyContent: 'flex-start',
   },
   textContainer: {
     alignItems: 'center',
@@ -61,7 +61,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginTop: 78,
-    alignSelf: 'center', // Центрирование по горизонтали
   },
   buttonSign: {
     backgroundColor: '#53B175',
@@ -75,9 +74,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     marginTop: 30,
     marginBottom: 167,
-    alignSelf: 'center', // Центрирование по горизонтали
+    alignSelf: 'center',
   },
   buttonText: {
+    fontFamily: 'Gilroy-Bold',
     color: 'white',
     fontSize: 18,
   },
