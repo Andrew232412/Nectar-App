@@ -1,37 +1,23 @@
 import React from 'react';
 import {View, Text, Image, StyleSheet, TouchableOpacity} from 'react-native';
-import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import productsImage from '../../assets/Product.png';
+import {useNavigation} from '../navigation/types/navigation';
 
-type RootStackParamList = {
-  Sign: undefined;
-  Login: undefined;
-  Registration: undefined;
-};
-
-type SignScreenNavigationProp = NativeStackNavigationProp<
-  RootStackParamList,
-  'Sign'
->;
-
-type Props = {
-  navigation: SignScreenNavigationProp;
-};
-
-function SignScreen({navigation}: Props) {
+function SignScreen() {
+  const navigation = useNavigation<'Sign'>();
   return (
     <View style={styles.container}>
       <Image source={productsImage} style={styles.image} />
       <View style={styles.textContainer}>
         <Text style={styles.title}>Get your groceries with nectar</Text>
         <TouchableOpacity
-          style={styles.button}
-          onPress={() => navigation.navigate('Login')}>
+          style={styles.buttonLogin}
+          onPress={() => navigation.navigate('LogIn')}>
           <Text style={styles.buttonText}>Log In</Text>
         </TouchableOpacity>
         <TouchableOpacity
-          style={styles.button}
-          onPress={() => navigation.navigate('Registration')}>
+          style={styles.buttonSign}
+          onPress={() => navigation.navigate('SignUp')}>
           <Text style={styles.buttonText}>Sign Up</Text>
         </TouchableOpacity>
       </View>
@@ -42,12 +28,13 @@ function SignScreen({navigation}: Props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    backgroundColor: 'white',
+    alignItems: 'flex-start',
+    justifyContent: 'flex-start',
   },
   image: {
     width: '100%',
-    height: '50%',
+    height: '41.7%',
     resizeMode: 'cover',
   },
   textContainer: {
@@ -55,15 +42,40 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   title: {
+    fontFamily: 'Gilroy-Bold',
     fontSize: 24,
     marginBottom: 20,
+    marginLeft: 25,
+    width: 222,
+    textAlign: 'left',
+    alignSelf: 'flex-start',
   },
-  button: {
+  buttonLogin: {
     backgroundColor: '#53B175',
     paddingVertical: 10,
     paddingHorizontal: 20,
-    borderRadius: 5,
+    borderRadius: 15,
     marginVertical: 10,
+    width: 364,
+    height: 67,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 78,
+    alignSelf: 'center', // Центрирование по горизонтали
+  },
+  buttonSign: {
+    backgroundColor: '#53B175',
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    borderRadius: 15,
+    marginVertical: 10,
+    width: 364,
+    height: 67,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 30,
+    marginBottom: 167,
+    alignSelf: 'center', // Центрирование по горизонтали
   },
   buttonText: {
     color: 'white',

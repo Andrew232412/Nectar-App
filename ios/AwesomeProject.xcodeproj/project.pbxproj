@@ -18,6 +18,10 @@
 		AE234CC98B616B53A5B8C915 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = BE10A6AEDB3BF50B23A02A53 /* PrivacyInfo.xcprivacy */; };
 		553B3EBEB3C94E09812C0CCE /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F59561A6EA2C46D6BCF3E72F /* BootSplash.storyboard */; };
 		90C24597464E4B0591BEA6A4 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A326155AF304F8F88C010B3 /* Colors.xcassets */; };
+		E4FB634DC40844E39DBADB2B /* Gilroy-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 66AB68A84A694872B75E112E /* Gilroy-Bold.ttf */; };
+		052B899BAB824B48B40314D6 /* Gilroy-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8BB02FC6110C4B529DFD1FF0 /* Gilroy-Medium.ttf */; };
+		E120E613E8BC40209A44C860 /* Montserrat-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE5F70B3AEB045D493004EC9 /* Montserrat-Italic-VariableFont_wght.ttf */; };
+		4A57393D2AA74E4C8D1E72AA /* Montserrat-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4EC6F9FE2AC54645B99D71FC /* Montserrat-VariableFont_wght.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +57,10 @@
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		F59561A6EA2C46D6BCF3E72F /* BootSplash.storyboard */ = {isa = PBXFileReference; name = "BootSplash.storyboard"; path = "AwesomeProject/BootSplash.storyboard"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		9A326155AF304F8F88C010B3 /* Colors.xcassets */ = {isa = PBXFileReference; name = "Colors.xcassets"; path = "AwesomeProject/Colors.xcassets"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = folder.assetcatalog; explicitFileType = undefined; includeInIndex = 0; };
+		66AB68A84A694872B75E112E /* Gilroy-Bold.ttf */ = {isa = PBXFileReference; name = "Gilroy-Bold.ttf"; path = "../assets/fonts/Gilroy-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8BB02FC6110C4B529DFD1FF0 /* Gilroy-Medium.ttf */ = {isa = PBXFileReference; name = "Gilroy-Medium.ttf"; path = "../assets/fonts/Gilroy-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		DE5F70B3AEB045D493004EC9 /* Montserrat-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; name = "Montserrat-Italic-VariableFont_wght.ttf"; path = "../assets/fonts/Montserrat-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		4EC6F9FE2AC54645B99D71FC /* Montserrat-VariableFont_wght.ttf */ = {isa = PBXFileReference; name = "Montserrat-VariableFont_wght.ttf"; path = "../assets/fonts/Montserrat-VariableFont_wght.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +152,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				D4116B91BE554837835ACA0E /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -169,6 +178,18 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		D4116B91BE554837835ACA0E /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				66AB68A84A694872B75E112E /* Gilroy-Bold.ttf */,
+				8BB02FC6110C4B529DFD1FF0 /* Gilroy-Medium.ttf */,
+				DE5F70B3AEB045D493004EC9 /* Montserrat-Italic-VariableFont_wght.ttf */,
+				4EC6F9FE2AC54645B99D71FC /* Montserrat-VariableFont_wght.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -269,6 +290,10 @@
 				4970889A2C52674500795BBB /* bootsplash.png in Resources */,
 				553B3EBEB3C94E09812C0CCE /* BootSplash.storyboard in Resources */,
 				90C24597464E4B0591BEA6A4 /* Colors.xcassets in Resources */,
+				E4FB634DC40844E39DBADB2B /* Gilroy-Bold.ttf in Resources */,
+				052B899BAB824B48B40314D6 /* Gilroy-Medium.ttf in Resources */,
+				E120E613E8BC40209A44C860 /* Montserrat-Italic-VariableFont_wght.ttf in Resources */,
+				4A57393D2AA74E4C8D1E72AA /* Montserrat-VariableFont_wght.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

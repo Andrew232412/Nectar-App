@@ -17,7 +17,7 @@ function WelcomeScreen() {
       <View style={styles.overlay}>
         <View style={styles.contentContainer}>
           <Group />
-          <Text style={styles.title}>Welcome to our store</Text>
+          <Text style={styles.title}>Welcome {'\n'} to our store</Text>
           <Text style={styles.subtitle}>
             Get your groceries in as fast as one hour
           </Text>
@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     width: 500,
     justifyContent: 'flex-end',
     alignItems: 'center',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    backgroundColor: 'rgba(0, 0, 0, 0.1)',
   },
   contentContainer: {
     alignItems: 'center',
@@ -51,17 +51,18 @@ const styles = StyleSheet.create({
   },
   title: {
     fontFamily: 'Gilroy-Bold',
-    fontWeight: 300,
     fontSize: 48,
-    color: 'white',
-    marginBottom: 17,
-    padding: 15,
+    color: '#FFFFFF',
+    marginBottom: 10,
     justifyContent: 'center',
+    textAlign: 'center',
+    marginTop: 30,
   },
   subtitle: {
+    fontFamily: 'Gilroy-Medium',
     fontSize: 18,
-    color: 'white',
-    marginBottom: 20,
+    color: 'rgba(252, 252, 252, 0.7)',
+    marginBottom: 40,
   },
   button: {
     backgroundColor: '#53B175',
@@ -69,11 +70,13 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     borderRadius: 15,
     width: 353,
-    height: 60,
+    height: 67,
     justifyContent: 'center',
+    marginBottom: 40,
   },
   buttonText: {
-    color: 'white',
+    fontFamily: 'Gilroy-Bold',
+    color: '#FFF9FF',
     fontSize: 18,
     textAlign: 'center',
   },
