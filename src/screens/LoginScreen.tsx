@@ -8,6 +8,7 @@ import {
   Image,
 } from 'react-native';
 import {useNavigation} from '../navigation/types/navigation';
+import {firebase} from '../../firebase';
 import {useState} from 'react';
 
 export default function LoginScreen() {
@@ -15,6 +16,15 @@ export default function LoginScreen() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [secureTextEntry, setSecureTextEntry] = useState(true);
+
+  const handleLogin = async () => {
+    try {
+      await firebase.auth().signInWithEmailAndPassword(email, password);
+      console.log('User logged in successfully!');
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   return (
     <View style={styles.container}>
@@ -31,7 +41,7 @@ export default function LoginScreen() {
         />
       </View>
       <Text style={styles.title}>Log In</Text>
-      <Text style={styles.subtitle}>Enter your emails and password</Text>
+      <Text style={styles.subtitle}>Enter your email and password</Text>
       <View style={styles.inputContainer}>
         <Text style={styles.inputLabel}>Email</Text>
         <TextInput
@@ -63,11 +73,7 @@ export default function LoginScreen() {
           <Text style={styles.forgotPassword}>Forgot Password?</Text>
         </TouchableOpacity>
       </View>
-      <TouchableOpacity
-        style={styles.button}
-        onPress={() => {
-          /* Handle login */
-        }}>
+      <TouchableOpacity onPress={handleLogin} style={styles.button}>
         <Text style={styles.buttonText}>Log In</Text>
       </TouchableOpacity>
       <Text style={styles.switchText}>

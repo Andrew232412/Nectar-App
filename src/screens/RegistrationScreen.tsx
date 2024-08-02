@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import {useNavigation} from '../navigation/types/navigation';
+import {firebase} from '../../firebase';
 
 export default function RegistrationScreen() {
   const navigation = useNavigation<'SignUp'>();
@@ -15,6 +16,21 @@ export default function RegistrationScreen() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [secureTextEntry, setSecureTextEntry] = useState(true);
+
+  const handleSignUp = async () => {
+    try {
+      const userCredential = await firebase
+        .auth()
+        .createUserWithEmailAndPassword(email, password);
+      const user = userCredential.user;
+      console.log('User registered successfully!');
+      await user.updateProfile({
+        displayName: username,
+      });
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   return (
     <View style={styles.container}>
@@ -69,14 +85,10 @@ export default function RegistrationScreen() {
       </View>
       <Text style={styles.agreementText}>
         By continuing you agree to our{' '}
-        <Text style={styles.switchLink}>Terms of Service</Text> and{' '}
+        <Text style={styles.switchLink}>Terms of Service</Text> {'\n'}and{' '}
         <Text style={styles.switchLink}>Privacy Policy</Text>.
       </Text>
-      <TouchableOpacity
-        style={styles.button}
-        onPress={() => {
-          /* Handle sign up */
-        }}>
+      <TouchableOpacity onPress={handleSignUp} style={styles.button}>
         <Text style={styles.buttonText}>Sign Up</Text>
       </TouchableOpacity>
       <Text style={styles.switchText}>
@@ -215,7 +227,7 @@ const styles = StyleSheet.create({
   agreementText: {
     fontFamily: 'Gilroy-Medium',
     textAlign: 'left',
-    fontSize: 14,
+    fontSize: 16,
     color: '#7C7C7C',
     marginLeft: 25,
   },

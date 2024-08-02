@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
   title: {
     fontFamily: 'Gilroy-Bold',
     fontSize: 48,
-    color: '#FFFFFF',
+    color: 'rgba(255, 255, 255, 1)',
     marginBottom: 10,
     justifyContent: 'center',
     textAlign: 'center',

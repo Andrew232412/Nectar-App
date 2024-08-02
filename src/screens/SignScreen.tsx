@@ -20,6 +20,10 @@ function SignScreen() {
           onPress={() => navigation.navigate('SignUp')}>
           <Text style={styles.buttonText}>Sign Up</Text>
         </TouchableOpacity>
+        <Image
+          style={styles.muloNiz}
+          source={require('../../assets/Muloniz.png')}
+        />
       </View>
     </View>
   );
@@ -28,7 +32,7 @@ function SignScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: '#FCFCFC',
   },
   image: {
     width: '100%',
@@ -49,6 +53,7 @@ const styles = StyleSheet.create({
     width: 222,
     textAlign: 'left',
     alignSelf: 'flex-start',
+    color: 'rgba(3, 3, 3, 1)',
   },
   buttonLogin: {
     backgroundColor: '#53B175',
@@ -61,6 +66,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginTop: 78,
+    position: 'absolute',
+    top: 20,
   },
   buttonSign: {
     backgroundColor: '#53B175',
@@ -74,12 +81,22 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     marginTop: 30,
     marginBottom: 167,
-    alignSelf: 'center',
+    position: 'absolute',
+    top: 175,
   },
   buttonText: {
     fontFamily: 'Gilroy-Bold',
     color: 'white',
     fontSize: 18,
+  },
+  muloNiz: {
+    width: 600,
+    height: 500,
+    left: 75,
+    resizeMode: 'cover',
+    justifyContent: 'center',
+    alignItems: 'center',
+    zIndex: -1,
   },
 });
 
