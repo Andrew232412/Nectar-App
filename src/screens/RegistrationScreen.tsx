@@ -221,7 +221,7 @@ const styles = StyleSheet.create({
   },
   muloNiz: {
     width: 600,
-    height: 400,
+    height: 300,
     resizeMode: 'cover',
     justifyContent: 'center',
     alignItems: 'center',
