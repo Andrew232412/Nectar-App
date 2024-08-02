@@ -29,34 +29,49 @@ export default function RegistrationScreen() {
         style={styles.icon}
       />
       <Text style={styles.title}>Sign Up</Text>
-      <Text style={styles.subtitle}>Текст...</Text>
-      <TextInput
-        style={styles.input}
-        placeholder="Username"
-        value={username}
-        onChangeText={setUsername}
-      />
-      <TextInput
-        style={styles.input}
-        placeholder="Email"
-        value={email}
-        onChangeText={setEmail}
-        keyboardType="email-address"
-        autoCapitalize="none"
-      />
-      <View style={styles.passwordContainer}>
+      <Text style={styles.subtitle}>Enter your credentials to continue</Text>
+      <View style={styles.inputContainer}>
+        <Text style={styles.inputLabel}>Username</Text>
         <TextInput
           style={styles.input}
-          placeholder="Password"
-          value={password}
-          onChangeText={setPassword}
-          secureTextEntry={secureTextEntry}
+          placeholder="Username"
+          value={username}
+          onChangeText={setUsername}
+        />
+      </View>
+      <View style={styles.inputContainer}>
+        <Text style={styles.inputLabel}>Email</Text>
+        <TextInput
+          style={styles.input}
+          placeholder="Email"
+          value={email}
+          onChangeText={setEmail}
+          keyboardType="email-address"
           autoCapitalize="none"
         />
-        <TouchableOpacity onPress={() => setSecureTextEntry(!secureTextEntry)}>
-          <Text style={styles.eyeIcon}>{secureTextEntry ? '👁' : '🙈'}</Text>
-        </TouchableOpacity>
       </View>
+      <View style={styles.inputContainer}>
+        <Text style={styles.inputLabel}>Password</Text>
+        <View style={styles.passwordContainer}>
+          <TextInput
+            style={styles.input}
+            placeholder="Password"
+            value={password}
+            onChangeText={setPassword}
+            secureTextEntry={secureTextEntry}
+            autoCapitalize="none"
+          />
+          <TouchableOpacity
+            onPress={() => setSecureTextEntry(!secureTextEntry)}>
+            <Text style={styles.eyeIcon}>{secureTextEntry ? '👁' : '🙈'}</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+      <Text style={styles.agreementText}>
+        By continuing you agree to our{' '}
+        <Text style={styles.switchLink}>Terms of Service</Text> and{' '}
+        <Text style={styles.switchLink}>Privacy Policy</Text>.
+      </Text>
       <TouchableOpacity
         style={styles.button}
         onPress={() => {
@@ -72,6 +87,10 @@ export default function RegistrationScreen() {
           Log In
         </Text>
       </Text>
+      <Image
+        style={styles.muloNiz}
+        source={require('../../assets/Muloniz.png')}
+      />
     </View>
   );
 }
@@ -79,8 +98,7 @@ export default function RegistrationScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: 'rgba(255, 255, 255, 0.8)',
   },
   backButton: {
     position: 'absolute',
@@ -97,61 +115,116 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   image: {
-    width: '100%',
-    height: 200, // Adjust as needed
-    resizeMode: 'contain',
+    width: 435,
+    height: 320,
+    resizeMode: 'cover',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   icon: {
-    width: 50,
-    height: 50,
     position: 'absolute',
-    top: 150, // Adjust as needed
-    left: 20, // Adjust as needed
+    top: 150,
+    alignSelf: 'center',
   },
   title: {
-    fontSize: 24,
-    fontWeight: 'bold',
+    fontFamily: 'Gilroy-Bold',
+    fontSize: 26,
     marginTop: 20,
     textAlign: 'left',
+    marginLeft: 25,
+    position: 'absolute',
+    top: 233,
+    color: '#030303',
   },
   subtitle: {
+    fontFamily: 'Gilroy-Medium',
     fontSize: 16,
-    color: '#888',
-    marginBottom: 20,
+    color: '#7C7C7C',
+    marginBottom: 40,
+    textAlign: 'left',
+    marginLeft: 25,
+    position: 'absolute',
+    marginTop: 15,
+    top: 277,
+  },
+  inputContainer: {
+    marginBottom: 15,
+  },
+  inputLabel: {
+    fontFamily: 'Gilroy-Bold',
+    fontSize: 16,
+    color: '#7C7C7C',
+    marginBottom: 5,
+    textAlign: 'left',
+    marginLeft: 25,
+    marginTop: 15,
   },
   input: {
-    borderWidth: 1,
-    borderColor: '#ccc',
-    padding: 10,
-    marginBottom: 10,
-    borderRadius: 5,
+    height: 40,
+    borderBottomColor: '#E2E2E2',
+    borderBottomWidth: 1,
+    marginLeft: 25,
+    marginBottom: 15,
+    width: 364,
+    fontSize: 18,
+    color: '#181725',
+    fontFamily: 'Gilroy-Medium',
   },
   passwordContainer: {
     flexDirection: 'row',
     alignItems: 'center',
+    width: 364,
   },
   eyeIcon: {
-    marginLeft: 10,
+    marginLeft: -25,
+    marginBottom: 13,
+    fontSize: 16,
   },
   button: {
     backgroundColor: '#53B175',
     paddingVertical: 10,
     paddingHorizontal: 20,
-    borderRadius: 5,
+    borderRadius: 15,
     alignItems: 'center',
     marginTop: 20,
+    alignSelf: 'center',
+    width: 364,
+    position: 'absolute',
+    top: 680,
+    height: 67,
+    justifyContent: 'center',
   },
   buttonText: {
+    fontFamily: 'Gilroy-Bold',
     color: 'white',
     fontSize: 18,
   },
   switchText: {
+    fontFamily: 'Gilroy-Medium',
     textAlign: 'center',
-    marginTop: 20,
+    marginTop: 50,
+    position: 'absolute',
+    top: 740,
     fontSize: 16,
+    alignSelf: 'center',
   },
   switchLink: {
+    fontFamily: 'Gilroy-Bold',
     color: '#53B175',
-    fontWeight: 'bold',
+  },
+  agreementText: {
+    fontFamily: 'Gilroy-Medium',
+    textAlign: 'left',
+    fontSize: 14,
+    color: '#7C7C7C',
+    marginLeft: 25,
+  },
+  muloNiz: {
+    width: 600,
+    height: 400,
+    resizeMode: 'cover',
+    justifyContent: 'center',
+    alignItems: 'center',
+    zIndex: -1,
   },
 });

@@ -23,32 +23,44 @@ export default function LoginScreen() {
         onPress={() => navigation.goBack()}>
         <Text style={styles.backButtonText}>Back</Text>
       </TouchableOpacity>
-      <Image source={require('../../assets/Mulo.png')} style={styles.image} />
-      <Image
-        source={require('../../assets/morkovka.png')}
-        style={styles.icon}
-      />
+      <View style={styles.headerContainer}>
+        <Image source={require('../../assets/Mulo.png')} style={styles.image} />
+        <Image
+          source={require('../../assets/morkovka.png')}
+          style={styles.icon}
+        />
+      </View>
       <Text style={styles.title}>Log In</Text>
-      <Text style={styles.subtitle}>Текст...</Text>
-      <TextInput
-        style={styles.input}
-        placeholder="Email"
-        value={email}
-        onChangeText={setEmail}
-        keyboardType="email-address"
-        autoCapitalize="none"
-      />
-      <View style={styles.passwordContainer}>
+      <Text style={styles.subtitle}>Enter your emails and password</Text>
+      <View style={styles.inputContainer}>
+        <Text style={styles.inputLabel}>Email</Text>
         <TextInput
           style={styles.input}
-          placeholder="Password"
-          value={password}
-          onChangeText={setPassword}
-          secureTextEntry={secureTextEntry}
+          placeholder="Email"
+          value={email}
+          onChangeText={setEmail}
+          keyboardType="email-address"
           autoCapitalize="none"
         />
-        <TouchableOpacity onPress={() => setSecureTextEntry(!secureTextEntry)}>
-          <Text style={styles.eyeIcon}>{secureTextEntry ? '👁' : '🙈'}</Text>
+      </View>
+      <View style={styles.inputContainer}>
+        <Text style={styles.inputLabel}>Password</Text>
+        <View style={styles.passwordContainer}>
+          <TextInput
+            style={styles.input}
+            placeholder="Password"
+            value={password}
+            onChangeText={setPassword}
+            secureTextEntry={secureTextEntry}
+            autoCapitalize="none"
+          />
+          <TouchableOpacity
+            onPress={() => setSecureTextEntry(!secureTextEntry)}>
+            <Text style={styles.eyeIcon}>{secureTextEntry ? '👁' : '🙈'}</Text>
+          </TouchableOpacity>
+        </View>
+        <TouchableOpacity>
+          <Text style={styles.forgotPassword}>Forgot Password?</Text>
         </TouchableOpacity>
       </View>
       <TouchableOpacity
@@ -66,6 +78,10 @@ export default function LoginScreen() {
           Sign Up
         </Text>
       </Text>
+      <Image
+        style={styles.muloNiz}
+        source={require('../../assets/Muloniz.png')}
+      />
     </View>
   );
 }
@@ -73,8 +89,7 @@ export default function LoginScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: 'rgba(255, 255, 255, 0.8)',
   },
   backButton: {
     position: 'absolute',
@@ -86,65 +101,122 @@ const styles = StyleSheet.create({
     zIndex: 10,
   },
   backButtonText: {
+    fontFamily: 'Gilroy-Medium',
     color: 'white',
     fontSize: 16,
   },
   image: {
-    width: '100%',
-    height: 200, // Adjust as needed
-    resizeMode: 'contain',
+    width: 435,
+    height: 320,
+    resizeMode: 'cover',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   icon: {
-    width: 50,
-    height: 50,
     position: 'absolute',
-    top: 150, // Adjust as needed
-    left: 20, // Adjust as needed
+    top: 150,
+    alignSelf: 'center',
+  },
+  headerContainer: {
+    width: '100%',
+    alignItems: 'center',
+    height: 350,
   },
   title: {
-    fontSize: 24,
-    fontWeight: 'bold',
+    fontFamily: 'Gilroy-Bold',
+    fontSize: 26,
     marginTop: 20,
     textAlign: 'left',
+    marginLeft: 25,
+    position: 'absolute',
+    top: 233,
+    color: '#030303',
   },
   subtitle: {
+    fontFamily: 'Gilroy-Medium',
     fontSize: 16,
-    color: '#888',
+    color: '#7C7C7C',
     marginBottom: 20,
+    textAlign: 'left',
+    marginLeft: 25,
+    position: 'absolute',
+    marginTop: 15,
+    top: 277,
+  },
+  inputContainer: {
+    marginBottom: 15,
+  },
+  inputLabel: {
+    fontFamily: 'Gilroy-Bold',
+    fontSize: 16,
+    color: '#7C7C7C',
+    marginBottom: 5,
+    textAlign: 'left',
+    marginLeft: 25,
   },
   input: {
-    borderWidth: 1,
-    borderColor: '#ccc',
-    padding: 10,
-    marginBottom: 10,
-    borderRadius: 5,
+    height: 40,
+    borderBottomColor: '#E2E2E2',
+    borderBottomWidth: 1,
+    marginLeft: 25,
+    marginBottom: 15,
+    width: 364,
+    fontSize: 18,
+    color: '#181725',
+    fontFamily: 'Gilroy-Medium',
   },
   passwordContainer: {
     flexDirection: 'row',
     alignItems: 'center',
+    width: 364,
   },
   eyeIcon: {
-    marginLeft: 10,
+    marginLeft: -25,
+    marginBottom: 13,
+    fontSize: 16,
   },
   button: {
     backgroundColor: '#53B175',
     paddingVertical: 10,
     paddingHorizontal: 20,
-    borderRadius: 5,
+    borderRadius: 15,
     alignItems: 'center',
     marginTop: 20,
+    alignSelf: 'center',
+    width: 364,
+    position: 'absolute',
+    top: 540,
+    height: 67,
+    justifyContent: 'center',
   },
   buttonText: {
+    fontFamily: 'Gilroy-Bold',
     color: 'white',
     fontSize: 18,
   },
   switchText: {
+    fontFamily: 'Gilroy-Medium',
     textAlign: 'center',
-    marginTop: 20,
+    marginTop: 10,
+    position: 'absolute',
+    top: 640,
     fontSize: 16,
+    alignSelf: 'center',
   },
   switchLink: {
+    fontFamily: 'Gilroy-Bold',
     color: '#53B175',
-    fontWeight: 'bold',
+  },
+  forgotPassword: {
+    marginRight: 40,
+    alignSelf: 'flex-end',
+  },
+  muloNiz: {
+    width: 600,
+    height: 400,
+    resizeMode: 'cover',
+    justifyContent: 'center',
+    alignItems: 'center',
+    zIndex: -1,
   },
 });
