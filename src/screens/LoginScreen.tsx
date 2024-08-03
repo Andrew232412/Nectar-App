@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   View,
   Text,
@@ -8,21 +8,33 @@ import {
   Image,
 } from 'react-native';
 import {useNavigation} from '../navigation/types/navigation';
-import {firebase} from '../../firebase';
-import {useState} from 'react';
+import auth from '@react-native-firebase/auth';
 
 export default function LoginScreen() {
   const navigation = useNavigation<'LogIn'>();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [secureTextEntry, setSecureTextEntry] = useState(true);
+  const [error, setError] = useState('');
 
   const handleLogin = async () => {
+    setError('');
     try {
-      await firebase.auth().signInWithEmailAndPassword(email, password);
-      console.log('User logged in successfully!');
-    } catch (error) {
-      console.error(error);
+      await auth().signInWithEmailAndPassword(email, password);
+      navigation.navigate('Home');
+    } catch (err: unknown) {
+      const firebaseError = err as {code: string; message: string};
+      if (firebaseError.code === 'auth/user-not-found') {
+        setError('No user found with this email.');
+      } else if (firebaseError.code === 'auth/invalid-email') {
+        setError('The email address is not valid.');
+      } else if (firebaseError.code === 'auth/wrong-password') {
+        setError('Incorrect password. Please try again.');
+      } else if (firebaseError.code === 'auth/invalid-credential') {
+        setError('Incorrect credentials. Please try again.');
+      } else {
+        setError(firebaseError.message);
+      }
     }
   };
 
@@ -73,6 +85,7 @@ export default function LoginScreen() {
           <Text style={styles.forgotPassword}>Forgot Password?</Text>
         </TouchableOpacity>
       </View>
+      {error ? <Text style={styles.error}>{error}</Text> : null}
       <TouchableOpacity onPress={handleLogin} style={styles.button}>
         <Text style={styles.buttonText}>Log In</Text>
       </TouchableOpacity>
@@ -224,5 +237,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     zIndex: -1,
+  },
+  error: {
+    color: 'red',
+    marginBottom: 20,
   },
 });

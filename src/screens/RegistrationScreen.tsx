@@ -8,7 +8,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import {useNavigation} from '../navigation/types/navigation';
-import {firebase} from '../../firebase';
+import auth from '@react-native-firebase/auth';
 
 export default function RegistrationScreen() {
   const navigation = useNavigation<'SignUp'>();
@@ -16,19 +16,28 @@ export default function RegistrationScreen() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [secureTextEntry, setSecureTextEntry] = useState(true);
+  const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
 
   const handleSignUp = async () => {
+    setError('');
+    setSuccess('');
     try {
-      const userCredential = await firebase
-        .auth()
-        .createUserWithEmailAndPassword(email, password);
-      const user = userCredential.user;
-      console.log('User registered successfully!');
-      await user.updateProfile({
-        displayName: username,
-      });
-    } catch (error) {
-      console.error(error);
+      await auth().createUserWithEmailAndPassword(email, password);
+      setSuccess('Account was successfully registered');
+    } catch (err: unknown) {
+      const firebaseError = err as {code: string; message: string};
+      if (firebaseError.code === 'auth/email-already-in-use') {
+        setError('The email address is already in use.');
+      } else if (firebaseError.code === 'auth/invalid-email') {
+        setError('The email address is not valid.');
+      } else if (firebaseError.code === 'auth/weak-password') {
+        setError(
+          'The password is too weak. It must be at least 6 characters long.',
+        );
+      } else {
+        setError(firebaseError.message);
+      }
     }
   };
 
@@ -88,6 +97,8 @@ export default function RegistrationScreen() {
         <Text style={styles.switchLink}>Terms of Service</Text> {'\n'}and{' '}
         <Text style={styles.switchLink}>Privacy Policy</Text>.
       </Text>
+      {error ? <Text style={styles.error}>{error}</Text> : null}
+      {success ? <Text style={styles.success}>{success}</Text> : null}
       <TouchableOpacity onPress={handleSignUp} style={styles.button}>
         <Text style={styles.buttonText}>Sign Up</Text>
       </TouchableOpacity>
@@ -238,5 +249,19 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     zIndex: -1,
+  },
+  error: {
+    color: 'red',
+  },
+  errorText: {
+    color: 'red',
+    marginBottom: 20,
+  },
+  success: {
+    color: 'green',
+  },
+  successText: {
+    color: 'green',
+    marginBottom: 20,
   },
 });
