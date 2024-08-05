@@ -20,8 +20,12 @@ export default function LoginScreen() {
   const handleLogin = async () => {
     setError('');
     try {
-      await auth().signInWithEmailAndPassword(email, password);
-      navigation.navigate('Home');
+      await auth()
+        .signInWithEmailAndPassword(email, password)
+        .then(() => {
+          navigation.navigate('Home');
+        });
+      // navigation.navigate('Home');
     } catch (err: unknown) {
       const firebaseError = err as {code: string; message: string};
       if (firebaseError.code === 'auth/user-not-found') {
@@ -204,7 +208,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     width: 364,
     position: 'absolute',
-    top: 540,
+    top: 560,
     height: 67,
     justifyContent: 'center',
   },
@@ -218,7 +222,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginTop: 10,
     position: 'absolute',
-    top: 640,
+    top: 650,
     fontSize: 16,
     alignSelf: 'center',
   },
@@ -239,7 +243,11 @@ const styles = StyleSheet.create({
     zIndex: -1,
   },
   error: {
+    fontFamily: 'Gilroy-Medium',
+    fontSize: 18,
     color: 'red',
     marginBottom: 20,
+    textAlign: 'center',
+    paddingBottom: 10,
   },
 });

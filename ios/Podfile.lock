@@ -1287,7 +1287,7 @@ PODS:
     - React-perflogger (= 0.74.3)
     - React-utils (= 0.74.3)
   - RecaptchaInterop (100.0.0)
-  - RNBootSplash (6.0.0):
+  - RNBootSplash (6.1.0):
     - React-Core
   - RNFBApp (20.3.0):
     - Firebase/CoreOnly (= 10.29.0)
@@ -1296,7 +1296,7 @@ PODS:
     - Firebase/Auth (= 10.29.0)
     - React-Core
     - RNFBApp
-  - RNScreens (3.32.0):
+  - RNScreens (3.33.0):
     - DoubleConversion
     - glog
     - hermes-engine
@@ -1627,10 +1627,10 @@ SPEC CHECKSUMS:
   React-utils: a06061b3887c702235d2dac92dacbd93e1ea079e
   ReactCommon: f00e436b3925a7ae44dfa294b43ef360fbd8ccc4
   RecaptchaInterop: 7d1a4a01a6b2cb1610a47ef3f85f0c411434cb21
-  RNBootSplash: 16564e5c1b48ba8d9dd0fd3d53538f111daf7369
+  RNBootSplash: 7abfdb0e67dd2316dde619a54d5ef68b13e39b5f
   RNFBApp: 793adb33298db7e67dc365dc1ec0dc8a55a7a044
   RNFBAuth: e923d3f87088009ac8505140599ec1e784d77bd0
-  RNScreens: 5aeecbb09aa7285379b6e9f3c8a3c859bb16401c
+  RNScreens: d2a12528d1abe4922e7ee5c9a00dd40c827c2ab5
   RNSVG: cb24fb322de8c1ebf59904e7aca0447bb8dbed5a
   RNVectorIcons: 2a2f79274248390b80684ea3c4400bd374a15c90
   SocketRocket: abac6f5de4d4d62d24e11868d7a2f427e0ef940d

@@ -13,8 +13,15 @@ export interface ScreensParamsList {
   Home: undefined;
   DOES_NOT_EXIST: undefined;
 }
+export type BottomTabParamList = {
+  Shop: undefined;
+  Explore: undefined;
+  Cart: undefined;
+  Favourite: undefined;
+  Account: undefined;
+};
 export type Screen = keyof ScreensParamsList;
-export type TabScreen = 'Home';
+export type TabScreen = 'Sign';
 export type RootTabsParamList = Pick<ScreensParamsList, TabScreen>;
 export type RootStackParamList = Omit<ScreensParamsList, TabScreen>;
 
