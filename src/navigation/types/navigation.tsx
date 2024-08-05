@@ -10,7 +10,8 @@ export interface ScreensParamsList {
   Sign: undefined;
   LogIn: undefined;
   SignUp: undefined;
-  Home: undefined;
+  HomeTabNavigator: undefined;
+  Explore: undefined;
   DOES_NOT_EXIST: undefined;
 }
 export type BottomTabParamList = {

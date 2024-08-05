@@ -23,7 +23,7 @@ export default function LoginScreen() {
       await auth()
         .signInWithEmailAndPassword(email, password)
         .then(() => {
-          navigation.navigate('Home');
+          navigation.navigate('HomeTabNavigator');
         });
       // navigation.navigate('Home');
     } catch (err: unknown) {
