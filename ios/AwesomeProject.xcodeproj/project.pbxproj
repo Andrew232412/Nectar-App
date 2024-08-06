@@ -14,6 +14,7 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		4970889A2C52674500795BBB /* bootsplash.png in Resources */ = {isa = PBXBuildFile; fileRef = 497088992C52674500795BBB /* bootsplash.png */; };
 		498F31F62C5D588D008402F0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 498F31F52C5D588D008402F0 /* GoogleService-Info.plist */; };
+		49ABB4242C623C05000329AA /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 49ABB4232C623C05000329AA /* Ionicons.ttf */; };
 		4A57393D2AA74E4C8D1E72AA /* Montserrat-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4EC6F9FE2AC54645B99D71FC /* Montserrat-VariableFont_wght.ttf */; };
 		553B3EBEB3C94E09812C0CCE /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F59561A6EA2C46D6BCF3E72F /* BootSplash.storyboard */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
@@ -49,6 +50,7 @@
 		3B4392A12AC88292D35C810B /* Pods-AwesomeProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AwesomeProject.debug.xcconfig"; path = "Target Support Files/Pods-AwesomeProject/Pods-AwesomeProject.debug.xcconfig"; sourceTree = "<group>"; };
 		497088992C52674500795BBB /* bootsplash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bootsplash.png; sourceTree = "<group>"; };
 		498F31F52C5D588D008402F0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		49ABB4232C623C05000329AA /* Ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		4EC6F9FE2AC54645B99D71FC /* Montserrat-VariableFont_wght.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-VariableFont_wght.ttf"; path = "../assets/fonts/Montserrat-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-AwesomeProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AwesomeProject.release.xcconfig"; path = "Target Support Files/Pods-AwesomeProject/Pods-AwesomeProject.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-AwesomeProject-AwesomeProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AwesomeProject-AwesomeProjectTests.debug.xcconfig"; path = "Target Support Files/Pods-AwesomeProject-AwesomeProjectTests/Pods-AwesomeProject-AwesomeProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 		D4116B91BE554837835ACA0E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				49ABB4232C623C05000329AA /* Ionicons.ttf */,
 				66AB68A84A694872B75E112E /* Gilroy-Bold.ttf */,
 				8BB02FC6110C4B529DFD1FF0 /* Gilroy-Medium.ttf */,
 				DE5F70B3AEB045D493004EC9 /* Montserrat-Italic-VariableFont_wght.ttf */,
@@ -292,6 +295,7 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				49ABB4242C623C05000329AA /* Ionicons.ttf in Resources */,
 				AE234CC98B616B53A5B8C915 /* PrivacyInfo.xcprivacy in Resources */,
 				4970889A2C52674500795BBB /* bootsplash.png in Resources */,
 				553B3EBEB3C94E09812C0CCE /* BootSplash.storyboard in Resources */,

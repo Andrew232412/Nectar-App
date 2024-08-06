@@ -11,7 +11,6 @@ export interface ScreensParamsList {
   LogIn: undefined;
   SignUp: undefined;
   HomeTabNavigator: undefined;
-  Explore: undefined;
   DOES_NOT_EXIST: undefined;
 }
 export type BottomTabParamList = {
@@ -22,7 +21,7 @@ export type BottomTabParamList = {
   Account: undefined;
 };
 export type Screen = keyof ScreensParamsList;
-export type TabScreen = 'Sign';
+export type TabScreen = 'DOES_NOT_EXIST';
 export type RootTabsParamList = Pick<ScreensParamsList, TabScreen>;
 export type RootStackParamList = Omit<ScreensParamsList, TabScreen>;
 
