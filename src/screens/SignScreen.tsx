@@ -22,7 +22,7 @@ function SignScreen() {
         </TouchableOpacity>
         <Image
           style={styles.muloNiz}
-          source={require('../../assets/Muloniz.png')}
+          source={require('../../assets/pngs/Muloniz.png')}
         />
       </View>
     </View>

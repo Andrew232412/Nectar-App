@@ -25,7 +25,6 @@ export default function LoginScreen() {
         .then(() => {
           navigation.navigate('HomeTabNavigator');
         });
-      // navigation.navigate('Home');
     } catch (err: unknown) {
       const firebaseError = err as {code: string; message: string};
       if (firebaseError.code === 'auth/user-not-found') {
@@ -50,9 +49,9 @@ export default function LoginScreen() {
         <Text style={styles.backButtonText}>Back</Text>
       </TouchableOpacity>
       <View style={styles.headerContainer}>
-        <Image source={require('../../assets/Mulo.png')} style={styles.image} />
+        <Image source={require('../../assets/pngs/Mulo.png')} style={styles.image} />
         <Image
-          source={require('../../assets/morkovka.png')}
+          source={require('../../assets/pngs/morkovka.png')}
           style={styles.icon}
         />
       </View>
@@ -103,7 +102,7 @@ export default function LoginScreen() {
       </Text>
       <Image
         style={styles.muloNiz}
-        source={require('../../assets/Muloniz.png')}
+        source={require('../../assets/pngs/Muloniz.png')}
       />
     </View>
   );

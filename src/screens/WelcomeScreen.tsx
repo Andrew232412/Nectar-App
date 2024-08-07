@@ -6,8 +6,8 @@ import {
   StyleSheet,
   TouchableOpacity,
 } from 'react-native';
-import backgroundImage from '../../assets/8140.png';
-import Group from '../../assets/Group';
+import backgroundImage from '../../assets/pngs/8140.png';
+// import Group from '../../assets/pngs/Group.png';
 import {useNavigation} from '../navigation/types/navigation';
 
 function WelcomeScreen() {
@@ -16,7 +16,7 @@ function WelcomeScreen() {
     <ImageBackground source={backgroundImage} style={styles.background}>
       <View style={styles.overlay}>
         <View style={styles.contentContainer}>
-          <Group />
+          {/* <Group /> It's an icon of carrot on the WelcomeScreen, make as svg*/} 
           <Text style={styles.title}>Welcome {'\n'} to our store</Text>
           <Text style={styles.subtitle}>
             Get your groceries in as fast as one hour
